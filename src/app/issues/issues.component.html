@@ -1,0 +1,182 @@
+<div>
+    <app-nav-bar-two></app-nav-bar-two>
+</div>
+
+<div class="challenges">
+    
+    <h1>Challenges</h1>
+
+    <div>
+        <p>
+            With some of the features orignally planned to be included being a little too ambitious, I ran into many challenges that slowed down development and forced me to move some requirements out of scope. While these challenges hindered the overall execution of this project, they were all great learning experiences that I am now able to take and apply to my next project.
+        </p>
+        <p>
+            Below are the features that I wanted to include in this project but were moved to out of scope, as well as why the feature was moved.
+        </p>
+
+        <ul>
+            <li>
+                Team Profiles
+                <ul>
+                    <li>
+                        I originally wanted to be able to have a profile page for every team, however due to the amount of different teams that are always changing at Ticketmaster, it became very difficult to create a fully editable page for every single team and was pushed to out of scope. Below are the original user stories for this feature:
+                    </li>
+                    <li>
+                        <img src="/assets/images/profileFR.png">
+                    </li>
+                </ul>
+            </li>
+
+
+            <li>
+                Newsletter Creation
+                <ul>
+                    <li>
+                        For the Bi-Weekly Newsletters that are sent at Ticketmaster, I wanted to be able to have a Newsletter template that could be edited within the application, and then exported to be distributed across the organization.
+                    </li>
+                    <li>
+                        I was forced to change this feature to just being able to upload an image of the Newsletter rather than being able to fully edit within the app, due to time constraints and a lack of knowledge with TypeScript and Angular. Below are the original user stories for this feature:
+                    </li>
+                    <li>
+                        <img src="/assets/images/newsletterFR.png">
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                Status Reports (Google Sheets)
+                <ul>
+                    <li>
+                        Ticketmasters PMO office regularly uses a shared Google Sheet that contains tabs for every team in the organization. Each tab allows project managers to report on status for each developement team, which is then consolidated and sent out in the bi-weekly newsletter. 
+                    </li>
+                    <li>
+                        I wanted to be able to connect with the Google Sheets API to include this sheet in the application for users to view and edit. After reading through the Google Sheets API documentation, I found that it supports JavaScript and Node.js, which I thought would work with my application since I was using TypeScript, JavaScript, and Node.js.
+                    </li>
+                    <li>
+                        With Angular and TypeScript, I was unable to figure out how to import the FS module for Node, as Nodes FS module is not supported in Angular. The FS module is required to run the Google Sheets API credentials, and I was unable to find a feasible workaround to this problem. 
+                    </li>
+                    <li>
+                        In order to still showcase how this feature would look, I used an iframe to show a Google Sheet in the application. The iframe could not be used in the final version of this application due to a lack of security and only acts as an example of what was orginally planned. Below are the original user stories for this feature:
+                    </li>
+                    <li>
+                        <img src="/assets/images/googleFR.png">
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+<hr>
+
+<div class="risks">
+
+    <h1>Risks</h1>
+
+    <div>
+        <p>
+            Due to the fact that a majority of the technologies used in this application were used for the first time, there were some risks encountered that caused a slow down in development.
+        </p>
+        <ul>
+            <li>Angular
+                <ul>
+                    <li>At the start of this project, I had never used or learned anything about Angular before. Getting used to how Angular makes use of components and modules took some time, and in order to help myself learn faster I tried to teach myself through the use of a Udemy course online. This caused me to spend a considerable amount of time following the videos, and learning about how to start and begin development on an Angular project.</li>
+                </ul>
+
+            </li>
+
+
+            <li>Typescript
+                <ul>
+                    <li>
+                     With TypeScript being a primary language for Angular, I wanted to challenge myself to not only learn Angular, but learn how to use TypeScript with Angular as well. Along the way, I encountered risks with TypeScript and the API's I wanted to use.     
+                    </li>
+                    <li>
+                        One API that I wanted to utilize in my application was the Google Sheets API. The Google Sheets API is supported by Node.js and JavaScript, however Angular 8 does not support the fs module from Node.js.
+                    </li>
+                    <li>
+                        FS is needed to run the Google Sheets API credentials, and I was unable to import the node package with TypeScript. While there is most likely a work around to this, being on a time crunch with this project I was forced to push this API to out of scope due to the fact that I was unsure of what alternative method there was in TypeScript.  
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                Microsoft Outlook
+                <ul>
+                    <li>
+                        Another API that I wanted to include was the Microsoft Outlook API. This was going to be used to export Newsletters directly to employee accounts so that they can easily add the necessary stakeholders before sending it out.
+                    </li>
+                    <li>
+                        This issue with doing this is that in order to test this out, I needed an employee Outlook account to test with due to the protection of the Live Nation Okta server. Okta is an identity and access management company that helps companies manage and secure user authentication into modern applications. 
+                    </li>
+                    <li>
+                        Since the Newsletter creation feature was pushed to out of scope, this feature was pushed out as well.
+                    </li>
+                </ul>
+            </li>
+          </ul>
+
+    </div>
+
+
+</div>
+
+<hr>
+
+<div class="outstanding">
+    <h1>Outstanding Issues</h1>
+
+    <div>
+        <p>
+            As you have seen, I encountered many challenges and issues in developing this application. Currently, I am still trying to display information from Jira. I was able to connect to the Atlassian API and receive the correct JSON response for a given issue, but am still trying to figure out how to pull this data and display it with TypeScript.
+        </p>
+        <p>
+            I am also still trying to figure out how to not only upload an image of a Newsletter, but store it in Firebase for users to be able to add and delete images as necessary. To do so, I am using Google Cloud Functions, which is also a brand new technology that I am still trying to fully figure out. Google Cloud Functions is used to create and implement programmatic functions within Google's public cloud, without having to provision the underlying cloud infrastructure such as servers, storage, and other resources. I am using Google Cloud Functions to upload the image, store it, and be able to delete the image out of storage. 
+        </p>
+        <p>
+            The use of Angular's route guards still need to be implemented as well. Angular's route guards are interfaces which can tell the router whether or not it should allow navigation to a requested route. As of now, if a user is not logged in they can still naviage to different parts of the application. However, even though they can still navigate the information shown will be limited. The user should not be allowed to navigate to any part of the application without being logged in, and should be routed back to the login page if there is an attempt.
+        </p>
+
+    </div>
+
+    
+</div>
+<hr>
+
+<div class="overall"> 
+    <h1>Overall Takeaways</h1>
+
+    <div>
+        <p>
+            While this project has been very challenging, I was able to learn all new technologies and push myself out of my comfort zone to continue to learn on the fly. Learning a technology while being on a developmental time crunch is definetly not easy, but I am happy I chose to use the technologies that I did. 
+        </p>
+        <p>
+            I think from the start, the features that I initially wanted to include were far too ambitious for an application that is only being developed by one person. Also with having to balance 3 other classes and the work for those classes, I had a hard time guaging what features were actually feasible. By the time I figured out how to do something in TypeScript and Angular just to test out a proof of concept, I had already spent a good amount of time researching and had to rush to catch back up to where I needed to be based on my burn down chart.  
+        </p>
+        <p>
+            Retrospectively, choosing to work with all new technologies was great because it forced me to challenge myself and expand my repertoire of skills, but for this kind of assignment it might have been better to work with technologies we used in school. A great deal of time was spent on teaching myself and researching documentation on how to achieve things that I could easily do if I were to use the technologies we learned in other classes. 
+        </p>
+        <p>
+            However, I now know that I really enjoy developing with Angular, TypeScript, JavaScript, and Node.js and even though I encountered many challenges and issues, I think that having the knowledge in these technologies is very valuable for many different software jobs.
+        </p>
+    </div>
+
+</div>
+
+<hr>
+
+<div id="initial" class="initialFR">
+<h1>Initial Functional Requirements</h1>
+<p>
+    Below are the initial funtional requirements before features were pushed to out of scope:
+</p>
+<div>
+    <img src="/assets/images/initial1.png">
+    <img src="/assets/images/initial2.png">
+    <img src="/assets/images/initial3.png">
+</div>
+
+</div>

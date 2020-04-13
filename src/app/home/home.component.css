@@ -1,0 +1,40 @@
+
+
+.image_text {
+    position: absolute;
+    margin: 0 auto;
+    z-index: 1000;
+    bottom: 50%;
+    left: 40%;
+    top: 20%;
+    text-align: center;
+    
+    
+}
+
+.image_container {
+
+    position: relative;
+}
+
+.home_container {
+    position: relative;
+    background: url('/assets/images/bg1.png');
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#section1 {
+    height: 900px;
+}
+
+.home_body {
+    padding-top: 80px;
+}
+
+.introduction {
+    padding-left: 50px;
+    padding-right: 50px;
+}
