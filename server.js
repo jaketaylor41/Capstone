@@ -6,11 +6,11 @@ const path = require('path');
 const app = express();
 
 // Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/dist/<cst-452-capstone>'));
+app.use(express.static(__dirname + '/dist/capstone-final'));
 
 app.get('/*', function(req,res) {
     
-res.sendFile(path.join(__dirname+'/dist/<cst-452-capstone>/index.html'));
+res.sendFile(path.join(__dirname+'/dist/capstone-final/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
